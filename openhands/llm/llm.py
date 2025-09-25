@@ -131,6 +131,15 @@ class LLM(RetryMixin, DebugMixin):
                 f'Rewrote openhands/{model_name} to {self.config.model} with base URL {self.config.base_url}'
             )
 
+        # Handle Echo provider - rewrite to use Echo's router
+        if self.config.model.startswith('echo/'):
+            model_name = self.config.model.removeprefix('echo/')
+            self.config.model = model_name  # Echo expects the model name without prefix
+            self.config.base_url = 'https://echo.router.merit.systems'
+            logger.debug(
+                f'Rewrote echo/{model_name} to {self.config.model} with base URL {self.config.base_url}'
+            )
+
         features = get_features(self.config.model)
         if features.supports_reasoning_effort:
             # For Gemini models, only map 'low' to optimized thinking budget
