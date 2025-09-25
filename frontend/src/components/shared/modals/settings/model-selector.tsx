@@ -11,6 +11,7 @@ import {
   VERIFIED_MODELS,
   VERIFIED_PROVIDERS,
   VERIFIED_OPENHANDS_MODELS,
+  VERIFIED_ECHO_MODELS,
 } from "#/utils/verified-models";
 import { extractModelAndProvider } from "#/utils/extract-model-and-provider";
 import { cn } from "#/utils/utils";
@@ -44,6 +45,9 @@ export function ModelSelector({
   const getVerifiedModels = () => {
     if (selectedProvider === "openhands") {
       return VERIFIED_OPENHANDS_MODELS;
+    }
+    if (selectedProvider === "echo") {
+      return VERIFIED_ECHO_MODELS;
     }
     return VERIFIED_MODELS;
   };
@@ -156,6 +160,17 @@ export function ModelSelector({
           text={t(I18nKey.SETTINGS$NEED_OPENHANDS_ACCOUNT)}
           linkText={t(I18nKey.SETTINGS$CLICK_HERE)}
           href={PRODUCT_URL.PRODUCTION}
+          size="settings"
+          linkColor="white"
+        />
+      )}
+
+      {selectedProvider === "echo" && (
+        <HelpLink
+          testId="echo-account-help"
+          text="Need an Echo account?"
+          linkText="Click here"
+          href="https://echo.merit.systems"
           size="settings"
           linkColor="white"
         />

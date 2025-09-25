@@ -106,6 +106,8 @@ def extract_model_and_provider(model: str) -> ModelInfo:
             return ModelInfo(provider='mistral', model=split[0], separator='/')
         if split[0] in VERIFIED_OPENHANDS_MODELS:
             return ModelInfo(provider='openhands', model=split[0], separator='/')
+        if split[0] in VERIFIED_ECHO_MODELS:
+            return ModelInfo(provider='echo', model=split[0], separator='/')
         # return as model only
         return ModelInfo(provider='', model=model, separator='')
 
@@ -147,7 +149,7 @@ def organize_models_and_providers(
     return result_dict
 
 
-VERIFIED_PROVIDERS = ['openhands', 'anthropic', 'openai', 'mistral']
+VERIFIED_PROVIDERS = ['openhands', 'anthropic', 'openai', 'mistral', 'echo']
 
 VERIFIED_OPENAI_MODELS = [
     'gpt-5-2025-08-07',
@@ -197,6 +199,21 @@ VERIFIED_OPENHANDS_MODELS = [
     'gemini-2.5-pro',
     'kimi-k2-0711-preview',
     'qwen3-coder-480b',
+]
+
+VERIFIED_ECHO_MODELS = [
+    'gpt-4o',
+    'gpt-4o-mini',
+    'gpt-5-nano',
+    'claude-3-5-sonnet-20241022',
+    'claude-3-5-haiku-20241022',
+    'claude-3-7-sonnet-20250219',
+    'claude-sonnet-4-20250514',
+    'claude-opus-4-20250514',
+    'claude-opus-4-1-20250805',
+    'gemini-2.5-pro',
+    'o3',
+    'o4-mini',
 ]
 
 
