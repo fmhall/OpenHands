@@ -4,6 +4,7 @@ export const VERIFIED_PROVIDERS = [
   "anthropic",
   "openai",
   "mistral",
+  "echo",
 ];
 export const VERIFIED_MODELS = [
   "o3-mini-2025-01-31",
@@ -25,6 +26,9 @@ export const VERIFIED_MODELS = [
   "qwen3-coder-480b",
   "gpt-5-2025-08-07",
   "gpt-5-mini-2025-08-07",
+  "gpt-4o",
+  "gpt-4o-mini",
+  "claude-3-5-haiku-20241022",
 ];
 
 // LiteLLM does not return OpenAI models with the provider, so we list them here to set them ourselves for consistency
@@ -81,5 +85,25 @@ export const VERIFIED_OPENHANDS_MODELS = [
   "qwen3-coder-480b",
 ];
 
+// Echo models that are supported through Echo's billing infrastructure
+// (e.g., they return `gpt-4o` instead of `echo/gpt-4o`)
+export const VERIFIED_ECHO_MODELS = [
+  "gpt-4o",
+  "gpt-4o-mini",
+  "gpt-5-nano",
+  "claude-3-5-sonnet-20241022",
+  "claude-3-5-haiku-20241022",
+  "claude-3-7-sonnet-20250219",
+  "claude-sonnet-4-20250514",
+  "claude-opus-4-20250514",
+  "claude-opus-4-1-20250805",
+  "gemini-2.5-pro",
+  "o3",
+  "o4-mini",
+];
+
 // Default model for OpenHands provider
 export const DEFAULT_OPENHANDS_MODEL = "openhands/claude-sonnet-4-20250514";
+
+// Default model for Echo provider
+export const DEFAULT_ECHO_MODEL = "echo/gpt-4o";

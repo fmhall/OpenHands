@@ -68,6 +68,23 @@ def get_supported_llm_models(config: OpenHandsConfig) -> list[str]:
         'openhands/kimi-k2-0711-preview',
         'openhands/qwen3-coder-480b',
     ]
-    model_list = openhands_models + model_list
+
+    # Add Echo provider models
+    echo_models = [
+        'echo/gpt-4o',
+        'echo/gpt-4o-mini',
+        'echo/gpt-5-nano',
+        'echo/claude-3-5-sonnet-20241022',
+        'echo/claude-3-5-haiku-20241022',
+        'echo/claude-3-7-sonnet-20250219',
+        'echo/claude-sonnet-4-20250514',
+        'echo/claude-opus-4-20250514',
+        'echo/claude-opus-4-1-20250805',
+        'echo/gemini-2.5-pro',
+        'echo/o3',
+        'echo/o4-mini',
+    ]
+
+    model_list = openhands_models + echo_models + model_list
 
     return list(sorted(set(model_list)))

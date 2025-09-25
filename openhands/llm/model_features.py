@@ -85,6 +85,17 @@ FUNCTION_CALLING_PATTERNS: list[str] = [
     'qwen3-coder*',
     'qwen3-coder-480b-a35b-instruct',
     'deepseek-chat',
+    # Echo provider patterns (matches models through Echo's billing infrastructure)
+    'echo/gpt-4o*',
+    'echo/gpt-5*',
+    'echo/claude-3-5-sonnet*',
+    'echo/claude-3-5-haiku*',
+    'echo/claude-3-7-sonnet*',
+    'echo/claude-sonnet-4*',
+    'echo/claude-opus-4*',
+    'echo/gemini-2.5-pro*',
+    'echo/o3*',
+    'echo/o4-mini*',
 ]
 
 REASONING_EFFORT_PATTERNS: list[str] = [
@@ -102,6 +113,11 @@ REASONING_EFFORT_PATTERNS: list[str] = [
     'gpt-5*',
     # DeepSeek reasoning family
     'deepseek-r1-0528*',
+    # Echo provider patterns for reasoning models
+    'echo/o3*',
+    'echo/o4-mini*',
+    'echo/gemini-2.5-pro*',
+    'echo/gpt-5*',
 ]
 
 PROMPT_CACHE_PATTERNS: list[str] = [
@@ -115,6 +131,12 @@ PROMPT_CACHE_PATTERNS: list[str] = [
     'claude-3-opus-20240229',
     'claude-sonnet-4*',
     'claude-opus-4*',
+    # Echo provider patterns for Claude models with prompt caching
+    'echo/claude-3-5-sonnet*',
+    'echo/claude-3-5-haiku*',
+    'echo/claude-3-7-sonnet*',
+    'echo/claude-sonnet-4*',
+    'echo/claude-opus-4*',
 ]
 
 SUPPORTS_STOP_WORDS_FALSE_PATTERNS: list[str] = [
@@ -125,6 +147,10 @@ SUPPORTS_STOP_WORDS_FALSE_PATTERNS: list[str] = [
     'grok-code-fast-1',
     # DeepSeek R1 family
     'deepseek-r1-0528*',
+    # Echo provider patterns for models that don't support stop words
+    'echo/o1*',
+    'echo/o3*',
+    'echo/o4-mini*',
 ]
 
 
